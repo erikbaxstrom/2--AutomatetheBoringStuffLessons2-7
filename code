@@ -1,0 +1,59 @@
+# Some notes from Automate the Boring Stuff with Python. Lessons 2-7
+
+
+if True == True:  # the part after the if is called a condition
+    print('true is true') # this is a block. in Python, code blocks start with a colon and are indented. 
+
+
+
+# True and False are the only boolean values. But many things are are truthy or falsey
+
+bool(True)
+bool(False)
+
+bool('') # falsey
+bool('anything that is not blank')
+
+bool(0) #falsey
+bool(15) #any int that isn't zero
+
+bool(0.0) #falsey
+bool(1.5) # any float that isn't zero
+
+bool([]) # empty list is falsey
+bool(['5',15]) # this list has stuff in it and is truthy
+
+
+
+
+# Break
+def yourName():
+    while True:
+        print('please type your name.')
+        name = input()
+        if name == 'your name':
+            break   # break: immediately leaves the while loop. Prints 'thank you' and then is done. 
+    print('thank you')
+
+# Continue
+def countSpam():
+    spam = 0
+    while spam < 5:
+        spam += 1
+        if spam == 3:
+            continue # Continue: immediately jumps back to the start of the loop and rechecks the condition. Does not print if spam is equal to three. 
+        print('Spam is', spam)
+
+
+# For, range()
+def jimmyFiveTimes():
+    print('My name is')
+    for i in range(5): # this is the range function. It returns a range object of range data type.
+                       # the range function can also be called w/ more parameters: range( start, stop [, step]).
+                       # range(5) is the same as range(0,5,1)
+                       # can also be called with negative numbers, like range(5, -2, -1) to start at five and decrement by 1 until -2
+        print('Jimmy Five Times', i)
+    for i in range(0,5,2): # This will execute only when i is inside the range 0-5. It will execute for 0, 2, 4, and then stop, since 6 is outside the range.
+        print('what is going to happen?!', i)
+
+
